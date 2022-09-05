@@ -1,211 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Resume</title>
 </head>
+
 <body>
-	<style>
-		@font-face {
-			font-family: PJR;
-			src: url("./Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf");
-		}
-		@font-face {
-			font-family: EPJR;
-			src: url("./Plus_Jakarta_Sans/static/PlusJakartaSans-ExtraBold.ttf");
-		}
-		@page  {
-			margin: 0;
-			size: letter; /*or width x height 150mm 50mm*/
-		}
-		*{
-			line-height: 1;
-			box-sizing: border-box;
-			margin: 2px 0;
-			font-family: PJR;
-		}
+    <div class="main_wrapper">
+        <section class="summary">
+            <img src="img/resumepic.jpeg" alt="resumepic" class="resumepic profile_picture">
+            <h1>Logan Allen</h1>
+            <p>I'm currenlty working in sales. My goal is to break into the tech field through coding. I have previous
+                experience in IT, but coding has me motivated for a new career path. In my free time I teach myself code.
+                I'm also lucky
+                to have a mentor help along the way. I've realized coding is challenging and forever evolving. I enjoy
+                learning new things and there is something new everyday within this field. 
+            </p>
+            <h1>Contact Info:</h1>
+            <ul class="header">
+                <li>(870)-878-2220</li>
+                <li>
+                    <a class="link"
+                        href="https://www.linkedin.com/in/logan-allen-a2213817a/">LinkedIn
+                    </a>
+                </li>
+                <li>
+                    <a class="link" href="https://github.com/LoganA25">
+                        GitHub
+                    </a>
+                </li>
+                <li>
+                    logandallen25@gmail.com
+                </li>
+            </ul>
+        </section>
+        <section class="main">
+            <h1>Education</h1>
+            <ul>
+                <li>Hoxie High School</li>
+                <li>Arkansas State University</li>
+            </ul>
+            <h1>Skills</h1>
+            <ul>
+                <li>Self taught: CSS, HTML, and JavaScript</li>
+            </ul>
 
-		a {
-			text-decoration: none;
-			color: rgb(57, 27, 232);
-		}
-		li {
-			padding: 2px;
-		}
-		h1{
-			font-family: EPJR;
-			font-size: 4em;
-		}
+            <h1>Experience</h1>
+            <h2>United States AirForce, Little Rock, AR</h2>
+            <h4>June 2018-August 2021</h4>
+            <h3>Senior Airman (Rank E4), Reservist (Currenlty IRR)</h3>
+            <ul>
+                <li>Journeyman in Air Transportation</li>
+                <li>Held secret security clearance</li>
+                <li>Leanred about responsibility, discipline, and dedication</li>
+            </ul>
+            <h2>Kalmer Solutions, Jonesboro, AR</h2>
+            <h4>October 2020-July 2021</h4>
+            <h3>Help Desk Technician</h3>
+            <ul>
+                <li>Able to complete countless tickets</li>
+                <li>Communicated frequenlty with customers and staff</li>
+                <li>Completed multiple projects</li>
+            </ul>
+            <h2>Central Toyota, Jonesboro, AR</h2>
+            <h4>July 2021- Present</h4>
+            <h3>Sales Professional</h3>
+            <ul>
+                <li>Dealt with CRM Management</li>
+                <li>Sold over $1 million in gross product within the first year</li>
+                <li>Selling a monthly average of 12 units</li>
+            </ul>
+            <h1>References</h1>
+            <h4>Justin Tefteller</h4>
+            <ul class="reference">
+                <li>Software Engineer at WP Engine</li>
+                <!-- <li>WP Engine</li> -->
+                <li>(870)-589-1080</li>
+                <!-- <li>504 Lavaca St, Suite 1000 Austin, TX</li> -->
+            </ul>
+            <h4>Thomas Hogan</h4>
+            <ul class="reference">
+                <li>Assistant Service Manager at Walmart</li>
+                <!-- <li>Walmart</li> -->
+                <li>(870)-882-2992</li>
+                <!-- <li>1815 E Highland Dr, Jonesboro, AR 72401</li> -->
+            </ul>
+            <h4>Brandon French</h4>
+            <ul class="reference">
+                <li>Sole Proprietor of Payvantage at Payvantage</li>
+                <!-- <li>Payvantage</li> -->
+                <li>(870)-758-0208</li>
+                <!-- <li>1217 Stone St, Jonesboro, AR 72401</li> -->
+            </ul>
 
-		h2 {
+        </section>
+    </div>
 
-			padding-bottom: 10px;
-		}
-		h3, h4, h5 {
-			padding-bottom: 4px;
-		}
-		h2 {
-			font-family:EPJR;
-		}
-		div {
-			padding-bottom: 10px;
-		}
 
-		#app__div--main_container {
-			width: 100vw;
-			min-height: 100vh;
-		}
-
-		.sub {
-			font-family: PJR;
-			font-size: 2em;
-			font-weight: 100;
-			font-style: italic;
-		}
-		#header {
-			background-color:#2e2e2e;
-			color: white;
-			padding: 2rem;
-			text-align: center;
-			margin-top: -4px;
-			min-width: 100%;
-		}
-		.grid {
-			display: grid;
-			grid-template-columns: 1fr 2fr;
-			grid-gap: 1em;
-			grid-template-areas: "l r";
-			width: 100%;
-			height: 100vh;
-		}
-
-		.column-left {
-			grid-area: l;
-			background-color: #f7f7f7;
-			text-align: right;
-			padding-right: 20px;
-		}
-		.column-right {
-			grid-area: r;
-			padding-left: 20px;
-			text-align: left;
-		}
-		.lc-item {
-			display: flex;
-			flex-direction: column;
-		}
-
-		.lc-item {
-			padding-top: 3px;
-			padding-bottom: 3px;
-		}
-
-	</style>       
-	<div id="app__div--main_container">
-		<section id="header">
-			<h1>Justin Tefteller</h1>
-			<h2 class="sub">Software Engineer</h2>
-		</section>
-		<section class="grid">
-			<section class="column-left">
-				<div class="lc-item">
-					<h2>Contact</h2>
-					<p>justintefteller@gmail.com</p>
-					<p>(870) 589-1080</p>
-					<p>Fayetteville, AR</p>
-					<a href="https://www.linkedin.com/in/justin-tefteller-104ab1136/">LinkedIn</a>
-					<a href="https://github.com/jtefteller">GitHub (3.7k+ Contributions)</a>
-
-				</div>
-
-				<div class="lc-item">
-					<h2>Education</h2>
-					<p>B.S.</p>
-					<p>Bachelor of International Business</p>
-					<p>University of Arkansas</p>
-					<p>September 2010 - December 2015</p>
-					<p>Fayetteville, AR</p>
-				</div>
-
-				<div class="lc-item">
-					<h2>Skills</h2>
-					<p>Self-Taught</p>
-					<p>Perl (Catalyst)</p>
-					<p>GoLang (cGin)</p>
-					<p>Javascript (Cypress, Jquery, NodeJS, ReactJS)</p>
-					<p>Python</p>
-					<p>SQL (MySQL, MariaDB)</p>
-					<p>HTML5/CSS</p>
-					<p>AWS/G Cloud</p>
-					<p>Git/Github/Gitlab</p>
-					<p>CentOS/Ubuntu/Windows</p>
-					<p>API Integration</p>
-					<p>Data Import/Export</p>
-					<p>Remote</p>
-					<p>Mentorship</p>
-					<p>Management</p>
-					<p>Sales</p>
-					<p>Customer Service</p>
-				</div>
-
-			</section>
-			<section class="column-right">
-				<h2>Work Experience</h2>
-				<div>
-					<h3>Software Engineer</h3>
-					<h4>Cetec-ERP</h4>
-					<h5>September 2019 - current / Austin, TX</h5>
-					<h5>Web-based digital SaaS platform designed to disrupt the ERP industry</h5>
-					<ul>
-						<li>Mentorship of upcoming software engineers</li>
-						<li>Using Cypress, I architected the entire frontend testing suite and in turn automated a previously manual full app diagnostic check</li>
-						<li>Redesigned the data import process which is ~50% of each project's revenue stream</li>
-						<li>Integrated with PayChex and CalcuQuote to automate external customer needs</li>
-						<li>
-							I have designed hundreds of features in:
-							<ul>
-								<li> Perl (Catalyst) - Backend </li>
-								<li> Javascript (Jquery, ReactJS) - Frontend </li>
-								<li> GoLang - Backend/External API </li>
-							</ul>
-						</li>
-						<li>
-							Daily Activities include: 
-							<ul>
-								<li>Designing New Features at $250/hr</li>
-								<li>Maintaining previously designed architecture</li>
-								<li>Improving high traffic pages</li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-				<div>
-					<h3>Client Advisor</h3>
-					<h4>BMW</h4>
-					<h5>May 2019 - September 2019 / Austin, TX</h5>
-					<h5>Distibution and sales of the "Ultimate Driving Machine"</h5>
-					<ul>
-						<li>Generated $1.5 million dollars in vehicles sales</li>
-						<li>Conducted multiple high impact sales presentations - daily</li>
-						<li>High volume lead generation</li>
-					</ul>
-
-				</div>
-				<div>
-					<h3>Assistant Sales Manager</h3>
-					<h4>Life Time Fitness</h4>
-					<h5>September 2017 - April 2019 / Austin, TX</h5>
-					<h5>A luxury, high-end, all inclusive gymnasium.</h5>
-					<ul>
-						<li>Managed a team of highly impactful individuals for the highest traffic Fitness Center in Texas</li>
-						<li>Made 900+ sales</li>
-					</ul>
-				</div>
-			</section>
-		</section>
-	</div>
 </body>
+
 </html>
